@@ -5,6 +5,7 @@ NoSQL databases are purpose-built for specific data models and store data in fle
 ## Scenario
 In our current project, we are experiencing performance and scaling issues. After conducting an initial analysis, our team lead has suggested that we explore the use of NoSQL databases to address these challenges. This `technical paper` investigates five popular [NoSQL databases](https://aws.amazon.com/nosql/), highlighting their features and use cases to determine their suitability for our project.
 
+![Alt Text](https://miro.medium.com/v2/resize:fit:710/1*aft5e_gFeDW4DQ8tayEsrA.png)
 
 ## NoSQL Databases
 
@@ -60,6 +61,25 @@ In our current project, we are experiencing performance and scaling issues. Afte
 
 4. **[Graph databases](https://www.mongodb.com/resources/basics/databases/nosql-explained) 🔗**
    - A graph database stores data in the form of nodes and edges. `Nodes` typically store information about people, places, and things (like nouns), while edges store information about the relationships between the nodes. They work well for highly connected data, where the relationships or patterns may not be very obvious initially. Examples of graph databases are `Neo4J and Amazon Neptune`.
+
+## Differences between RDBMS and NoSQL databases
+
+
+| Feature             | NoSQL                                                                                                         | RDBMS                                                                                              |
+|---------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Data modeling       | Data models vary based on the type of NoSQL database used — for example, key-value, document, graph, and wide-column. | Uses a tabular data structure with data represented as a set of rows and columns.                  |
+| Schema              | Provides a flexible schema where each set of documents/row-column/key-value pairs can contain different types of data. | Has a fixed schema where every row should contain the same predefined column types.                |
+| Query language      | Varies based on the type of NoSQL database used. MongoDB has MQL, Neo4J uses Cypher, etc.                      | Uses structured query language (SQL).                                                              |
+| Scalability         | Designed for vertical and horizontal scaling.                                                                 | Designed primarily for vertical scaling, with limited capabilities for horizontal scaling.         |
+| Data relationships | Relationships can be nested, explicit, or implicit.                                                            | Defined through foreign keys and accessed using joins.                                             |
+| Transaction type    | Transactions are either ACID- or BASE-compliant.                                                               | Transactions are ACID-compliant.                                                                   |
+| Performance         | Suitable for real-time processing, big data analytics, and distributed environments.                           | Suitable for read-heavy and transaction workloads.                                                 |
+| Data consistency    | Offers high data consistency.                                                                                  | Offers eventual consistency, in most cases.                                                        |
+| Distributed computing | Supports distributed data storage, vertical and horizontal scaling through sharding, replication, and clustering. | Supports distributed computing through clustering and replication, but less scalable and flexible. |
+| Fault tolerance     | Built-in fault tolerance and high availability due to data replication.                                         | Uses replication, backup, and recovery mechanisms, may require additional disaster recovery measures. |
+| Data partitioning   | Done through sharding and replication.                                                                         | Supports table-based partitioning and partition pruning.                                           |
+| Data to object mapping | Stores data in a variety of ways (JSON documents, wide-column stores, key-value pairs). Provides ODM frameworks. | Relies on data-to-object mapping for integration between database columns and object-oriented code. |
+
 
 ## Conclusion
 Each [NoSQL databases](https://aws.amazon.com/nosql/) offers unique strengths and is suited to different types of applications and `workloads`. Based on our project’s specific requirements—such as `data type`, volume, read/write patterns, and need for scalability and high availability—we can select the most appropriate NoSQL database to improve our system’s `performance` and `scalability`.
